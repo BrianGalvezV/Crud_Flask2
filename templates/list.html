@@ -10,16 +10,18 @@
       </tr>
     </thead>
     <tbody>
+    {% for row in list_employee %}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{row[0]}}</th>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
         <td>
-        <a class="btn btn-info" href="#" role="button">Edit</a>
-        <a class="btn btn-danger" href="#" role="button">Delete</a>
+        <a class="btn btn-info" href="/edit/{{row[0]}}" role="button">Edit</a>
+        <a class="btn btn-danger" href="/delete/{{row[0]}}" role="button">Delete</a>
         </td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
